@@ -28,10 +28,12 @@ There are some data files we will use in the code next:
 
 4、Extracting Satisfactory Measurements from data
 ========
+	
 	Based on column names in the features is an open question as to is the entries that include mean() and std() at the end, or does it include entries with mean in an earlier part of the name as well. There are no specific marking criteria on the number of columns.
 The grepl() function is playing a significant role in making the screening condition to select the right columns of the data. Output the matched columns, then we make it.
 
 5、A New Tidy Data Set with the Average of Each variable tidy data set with the average of each variable
 ========
+	
 	We get the subject column to create a new data.frame named average, then extend the columns with the function cbind(). The activity column is added to the average data.frame. 
 	Get the transposition of x and turn the intermediate result into data.frame , then compute its average call mean with sapply() function. Add mean into the average data.frame, and wirte it to the disk, then we get the average.txt which is what file we want.
