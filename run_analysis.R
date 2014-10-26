@@ -4,22 +4,22 @@
 
 run_analysis <- function() {
 
-subject_train <- read.table("UCI_HAR_Dataset/train/subject_train.txt")    ## read training data
-subject_test <- read.table("UCI_HAR_Dataset/test/subject_test.txt")       ## read test data
+subject_train <- read.table("./UCI HAR Dataset/train/subject_train.txt")    ## read training data
+subject_test <- read.table("./UCI HAR Dataset/test/subject_test.txt")       ## read test data
 subject <- rbind(subject_train, subject_test)                             ## merge training and test data
 names(subject) <- "subject"                                               ## naming
 
-y_train <- read.table("UCI_HAR_Dataset/train/y_train.txt")                ## read y training data
-y_test <- read.table("UCI_HAR_Dataset/test/y_test.txt")                   ## read y  test data
+y_train <- read.table("./UCI HAR Dataset/train/y_train.txt")                ## read y training data
+y_test <- read.table("./UCI HAR Dataset/test/y_test.txt")                   ## read y  test data
 y <- rbind(y_train, y_test)                                               ## merge training and test data
 names(y) <- "activity"                                                    ## naming
 
-x_train <- read.table("UCI_HAR_Dataset/train/X_train.txt")                ## read x training data 
-x_test <- read.table("UCI_HAR_Dataset/test/X_test.txt")                   ## read x test data
+x_train <- read.table("./UCI HAR Dataset/train/X_train.txt")                ## read x training data 
+x_test <- read.table("./UCI HAR Dataset/test/X_test.txt")                   ## read x test data
 x <- rbind(x_train, x_test)                                               ## merge x training and test data
 
 ## read 561 features and assign them to the names of x data
-features <- read.table("UCI_HAR_Dataset/features.txt") 
+features <- read.table("./UCI HAR Dataset/features.txt") 
 names(x) <- features[, 2] 
 
 ## merges the training and the test sets to create one data set
