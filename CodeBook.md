@@ -12,6 +12,9 @@ Features：
 	There are 561 kinds of features, and these features are normalized and bounded within [-1,1]. 
 	From each window, a vector of features was obtained by calculating variables from the time and frequency domain.
 	The features selected for this database come from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ. These time domain signals (prefix 't' to denote time) were captured at a constant rate of 50 Hz.
+	
+x data：
+	The collection of x training data and test data, which are respectively from train/X_train.txt and test/X_test.txt. The dimension of the collection is 10299 * 561.
 
 These signals were used to estimate variables of the feature vector for each pattern:  
 '-XYZ' is used to denote 3-axial signals in the X, Y and Z directions.
