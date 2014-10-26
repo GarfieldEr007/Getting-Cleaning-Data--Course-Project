@@ -31,25 +31,49 @@ condition <- condition_mean | condition_std                             ## merge
 
 ##extracts the measurements on the mean and standard deviation for each measurement
 meanstd <- data[condition] 
+data2 <- cbind(subject, y, meanstd)
+names(data2) <- c("subject", "activity", names(meanstd))
 
-## naming the activities with proper names
-data[, "activity"][data[, "activity"] == 1] <- "Walking"
-data[, "activity"][data[, "activity"] == 2] <- "Walking_Up"
-data[, "activity"][data[, "activity"] == 3] <- "Walking_Down"
-data[, "activity"][data[, "activity"] == 4] <- "Sitting"
-data[, "activity"][data[, "activity"] == 5] <- "Standing"
-data[, "activity"][data[, "activity"] == 6] <- "Laying"
+## data2 is a new data set extracted from data, naming the activities with proper names
+data2[, "activity"][data2[, "activity"] == 1] <- "Walking"
+data2[, "activity"][data2[, "activity"] == 2] <- "Walking_Up"
+data2[, "activity"][data2[, "activity"] == 3] <- "Walking_Down"
+data2[, "activity"][data2[, "activity"] == 4] <- "Sitting"
+data2[, "activity"][data2[, "activity"] == 5] <- "Standing"
+data2[, "activity"][data2[, "activity"] == 6] <- "Laying"
 
-## create a new data.frame from data
-average <- data["subject"] 
-average <- cbind(average, data[, "activity"]) 
+## get the row number and column number of data2
+rownum <- nrow(data2)
+colnum <- ncol(data2)
 
-x_t <- t(x)                                             ## the transposition of x
-x_t <- as.data.frame(x_t)                               ## turn x_t into data.frame
-mean <- sapply(x_t, mean)                               ## the average of each variable  
-average <- cbind(average, mean)                         ## add mean to average
-names(average) <- c("subject", "activity", "mean")      ## naming
+## initial variables setting
+subject_length <- length(unique(subject[, 1]))
+activity_names <- c("Walking", "Walking_Up", "Walking_Down", "Sitting", "Standing", "Laying")
+tidy_data <- data.frame(NULL)
+x_same <- data.frame(NULL)
 
-write.table(average, "average.txt", row.name = FALSE)   ## creating txt file
+for(s in 1:subject_length){           ## for1
+	for(a in activity_names){           ## for2
+
+		names <- c(s, a)                  ## subject and activity names
+
+		for(i in 1:rownum){               ## for3
+			name_temp <- c(data2[i, "subject"], data2[i, "activity"])
+			if(all(names == name_temp)){    ## if matching successfully, store the content of this row
+			x_same <- rbind(x_same, data2[i, 3:colnum])
+			##next
+		}                                 ## if
+		}                                 ## for3
+		
+		x_mean <- sapply(x_same, mean)    ## compute the average
+		tidy_data <- rbind(tidy_data, c(names, x_mean))   ## add subject, activity and average into tidy data set
+		x_same <- data.frame(NULL)        ## assign NUL to it for next loop
+
+		}                                 ## for2
+	
+}                                     ## for1
+
+names(tidy_data) <- names(data2)      ## set the name of tidy data
+write.table(tidy_data, "tidy_data.txt", row.name = FALSE)   ## creating txt file and store the tidy data
 
 }
