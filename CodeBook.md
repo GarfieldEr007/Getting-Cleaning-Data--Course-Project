@@ -1,6 +1,8 @@
 Variables in the data sets：
+======
 
 Subject：
+==
 	The collection of subject train sets and subject test sets, sources respectively from UCI_HAR_Dataset/train/subject_train.txt and UCI_HAR_Dataset/test/subject_test.txt
 	Each row of subject identifies the subject who performed the activity for each window sample. Its range is from 1 to 30
 
