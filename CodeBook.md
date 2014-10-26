@@ -121,6 +121,8 @@ most data files used in this code:
 
 ‘test/subject_test.txt’: similar to subject_train.txt, but it is a test data file not a train data file
 
+the Code
+=
   To clean up the data as we aspect, what we should do firstly is merging the training and the test sets to create one data set. Merge the x train data sets and x test data sets using the rbind() function, and we get a data set named x. We get y data set and subject data set in the same way. Then use the cbind() function to merge subject, y and x data sets into a new data set, which is just what data set we want. 
 	
   Based on column names in the features is an open question as to is the entries that include mean() and std() at the end, or does it include entries with mean in an earlier part of the name as well. There are no specific marking criteria on the number of columns. Match the column names using the grepl() function, and output the matched columns, then we did it.
