@@ -5,11 +5,17 @@ Getting & Cleaning Data--Course Project
 There are some data files we will use in the code next:
 ========
 'features.txt': List of all features.
+
 'train/X_train.txt': Training set.
+
 'train/y_train.txt': Training labels.
+
 'test/X_test.txt': Test set.
+
 'test/y_test.txt': Test labels.
+
 'train/subject_train.txt': Each row identifies the subject who performed the activity for each window sample. Its range is from 1 to 30.
+
 ‘test/subject_test.txt’: similar to subject_train.txt, but it is a test data file not a train data file
 
 1、Reading Data Sets
