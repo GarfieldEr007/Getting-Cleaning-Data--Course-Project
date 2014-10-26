@@ -50,6 +50,6 @@ mean <- sapply(x_t, mean)                               ## the average of each v
 average <- cbind(average, mean)                         ## add mean to average
 names(average) <- c("subject", "activity", "mean")      ## naming
 
-write.table(average, "average.txt", row.name = FALSE)   ## creating txt文件
+write.table(average, "average.txt", row.name = FALSE)   ## creating txt file
 
 }
