@@ -1,14 +1,14 @@
 Variables in the data sets：
 
-Subject
+Subject：
 	The collection of subject train sets and subject test sets, sources respectively from UCI_HAR_Dataset/train/subject_train.txt and UCI_HAR_Dataset/test/subject_test.txt
 	Each row of subject identifies the subject who performed the activity for each window sample. Its range is from 1 to 30
 
-Activity
+Activity：
 	The collection of y train sets and y test sets, sources respectively from UCI_HAR_Dataset/train/y_train.txt (training labels) and UCI_HAR_Dataset/test/y_test.txt(testing labels)
 	There are six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING), and the corresponding labels are 1, 2, 3, 4, 5 and 6
 
-Features
+Features：
 	There are 561 kinds of features, and these features are normalized and bounded within [-1,1]. 
 	From each window, a vector of features was obtained by calculating variables from the time and frequency domain.
 	The features selected for this database come from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ. These time domain signals (prefix 't' to denote time) were captured at a constant rate of 50 Hz.
@@ -68,7 +68,10 @@ most data files used in this code:
 'train/subject_train.txt': Each row identifies the subject who performed the activity for each window sample. Its range is from 1 to 30.
 ‘test/subject_test.txt’: similar to subject_train.txt, but it is a test data file not a train data file
 
-  To clean up the data as we aspect, what we should do firstly is merging the training and the test sets to create one data set. Merge the x train data sets and x test data sets using the rbind() function, and we get a data set named x. We get y data set and subject data set in the same way. Then use the cbind() function to merge subject, y and x data sets into a new data set, which is just what data set we want. 
-Based on column names in the features is an open question as to is the entries that include mean() and std() at the end, or does it include entries with mean in an earlier part of the name as well. There are no specific marking criteria on the number of columns. Match the column names using the grepl() function, and output the matched columns, then we did it.
-Uses activity names from features.txt to name the activities in the data set, and appropriately labels the data set with descriptive variable names.
-To create an independent tidy data set with the average of each variable for each activity and each subject, create a new data.frame including the subject, activity column and computed average using the mean() function.
+	To clean up the data as we aspect, what we should do firstly is merging the training and the test sets to create one data set. Merge the x train data sets and x test data sets using the rbind() function, and we get a data set named x. We get y data set and subject data set in the same way. Then use the cbind() function to merge subject, y and x data sets into a new data set, which is just what data set we want. 
+	
+	Based on column names in the features is an open question as to is the entries that include mean() and std() at the end, or does it include entries with mean in an earlier part of the name as well. There are no specific marking criteria on the number of columns. Match the column names using the grepl() function, and output the matched columns, then we did it.
+	
+	Uses activity names from features.txt to name the activities in the data set, and appropriately labels the data set with descriptive variable names.
+	
+	To create an independent tidy data set with the average of each variable for each activity and each subject, create a new data.frame including the subject, activity column and computed average using the mean() function.
