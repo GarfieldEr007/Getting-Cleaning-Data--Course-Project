@@ -68,10 +68,10 @@ most data files used in this code:
 'train/subject_train.txt': Each row identifies the subject who performed the activity for each window sample. Its range is from 1 to 30.
 ‘test/subject_test.txt’: similar to subject_train.txt, but it is a test data file not a train data file
 
-	To clean up the data as we aspect, what we should do firstly is merging the training and the test sets to create one data set. Merge the x train data sets and x test data sets using the rbind() function, and we get a data set named x. We get y data set and subject data set in the same way. Then use the cbind() function to merge subject, y and x data sets into a new data set, which is just what data set we want. 
+  To clean up the data as we aspect, what we should do firstly is merging the training and the test sets to create one data set. Merge the x train data sets and x test data sets using the rbind() function, and we get a data set named x. We get y data set and subject data set in the same way. Then use the cbind() function to merge subject, y and x data sets into a new data set, which is just what data set we want. 
 	
-	Based on column names in the features is an open question as to is the entries that include mean() and std() at the end, or does it include entries with mean in an earlier part of the name as well. There are no specific marking criteria on the number of columns. Match the column names using the grepl() function, and output the matched columns, then we did it.
+  Based on column names in the features is an open question as to is the entries that include mean() and std() at the end, or does it include entries with mean in an earlier part of the name as well. There are no specific marking criteria on the number of columns. Match the column names using the grepl() function, and output the matched columns, then we did it.
 	
-	Uses activity names from features.txt to name the activities in the data set, and appropriately labels the data set with descriptive variable names.
+  Uses activity names from features.txt to name the activities in the data set, and appropriately labels the data set with descriptive variable names.
 	
-	To create an independent tidy data set with the average of each variable for each activity and each subject, create a new data.frame including the subject, activity column and computed average using the mean() function.
+  To create an independent tidy data set with the average of each variable for each activity and each subject, create a new data.frame including the subject, activity column and computed average using the mean() function.
