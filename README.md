@@ -1,6 +1,6 @@
-Getting-Cleaning-Data--Course-Project
+Getting & Cleaning Data--Course Project
 =====================================
-The goal of this code  is to prepare tidy data that can be used for later analysis, and do some operations as asked in the Getting & Cleaning Data Course Project.
+	The goal of this code  is to prepare tidy data that can be used for later analysis, and do some operations as asked in the Getting & Cleaning Data Course Project.
 
 There are some data files we will use in the code next:
 'features.txt': List of all features.
