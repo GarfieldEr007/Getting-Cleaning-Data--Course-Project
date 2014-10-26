@@ -35,5 +35,5 @@ The grepl() function is playing a significant role in making the screening condi
 5、A New Tidy Data Set with the Average of Each variable tidy data set with the average of each variable
 ========
 	
-	We get the subject column to create a new data.frame named average, then extend the columns with the function cbind(). The activity column is added to the average data.frame. 
-	Get the transposition of x and turn the intermediate result into data.frame , then compute its average call mean with sapply() function. Add mean into the average data.frame, and wirte it to the disk, then we get the average.txt which is what file we want.
+We get the subject column to create a new data.frame named average, then extend the columns with the function cbind(). The activity column is added to the average data.frame. 
+Get the transposition of x and turn the intermediate result into data.frame , then compute its average call mean with sapply() function. Add mean into the average data.frame, and wirte it to the disk, then we get the average.txt which is what file we want.
